@@ -1,153 +1,122 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f9fafd;
-  color: #222;
+  padding: 0;
   min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f5f7fa;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-header {
-  background: #154c79;
-  color: #fff;
-  padding: 24px 0 18px 0;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(21, 76, 121, 0.08);
-}
-
-.logo {
-  width: 70px;
-  vertical-align: middle;
-  margin-bottom: 10px;
-}
-
-h1 {
-  margin: 0 0 4px 0;
-  font-size: 2.1em;
-  letter-spacing: 1px;
-}
-
-main {
-  flex: 1;
+.center-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 32px rgba(60, 60, 90, 0.09);
+  max-width: 370px;
+  width: 96vw;
+  margin: 0 auto;
+  padding: 40px 32px 32px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 16px 0 16px;
 }
 
-.verify-section, .add-section {
-  background: #fff;
-  padding: 32px 28px 28px 28px;
-  border-radius: 16px;
-  box-shadow: 0 4px 22px rgba(33, 64, 108, 0.08);
-  max-width: 400px;
+.gh-logo {
+  width: 180px;
+  margin-bottom: 25px;
+}
+
+.main-title {
+  margin: 0 0 10px 0;
+  font-size: 1.45em;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+}
+
+.subtitle {
+  color: #444;
+  font-size: 1em;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+#verifyForm {
   width: 100%;
-  margin-bottom: 32px;
-}
-
-.verify-section h2, .add-section h2 {
-  margin-top: 0;
-  margin-bottom: 24px;
-  font-size: 1.3em;
-  color: #154c79;
-  letter-spacing: 0.5px;
-}
-
-#verifyForm, #addForm {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 22px;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
-#verifyForm input,
-#addForm input {
-  padding: 10px 12px;
-  font-size: 1em;
-  border: 1px solid #cdd9ed;
-  border-radius: 6px;
+#certNumber {
+  width: 100%;
+  padding: 14px 13px;
+  font-size: 1.08em;
+  border: 1.2px solid #d2d6df;
+  border-radius: 7px;
+  background: #f8fafc;
   outline: none;
-  transition: border 0.2s;
+  transition: border 0.19s;
+  box-sizing: border-box;
 }
 
-#verifyForm input:focus,
-#addForm input:focus {
-  border-color: #154c79;
+#certNumber:focus {
+  border-color: #249370;
+  background: #fff;
 }
 
-button[type="submit"] {
-  background: #154c79;
+#searchBtn {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1.08em;
+  font-weight: 600;
+  background: #249370;
   color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 10px 22px;
-  font-size: 1em;
+  border-radius: 7px;
   cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(21, 76, 121, 0.1);
-  transition: background 0.2s;
+  transition: background 0.19s, opacity 0.13s;
+  margin-bottom: 0;
 }
 
-button[type="submit"]:hover {
-  background: #1861a3;
+#searchBtn:disabled {
+  background: #b5d0c3;
+  cursor: not-allowed;
+  opacity: 0.8;
 }
 
 .result {
-  min-height: 32px;
-}
-
-.success, .error {
-  padding: 18px 16px;
-  border-radius: 10px;
-  margin-top: 10px;
+  width: 100%;
+  min-height: 34px;
+  text-align: center;
+  margin-top: 18px;
+  font-size: 1.07em;
 }
 
 .success {
-  background: #eafbf3;
-  border: 1.5px solid #27ae60;
-  color: #17692a;
+  color: #249370;
+  background: #e9f7f0;
+  border-radius: 8px;
+  padding: 15px 10px;
 }
 
 .error {
-  background: #fff4f4;
-  border: 1.5px solid #e74c3c;
-  color: #a02a1b;
-}
-
-.success h3, .error h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 1.17em;
-}
-
-.badge {
-  display: inline-block;
-  padding: 2px 10px;
+  color: #b14d3c;
+  background: #fff8f4;
   border-radius: 8px;
-  font-size: 0.98em;
+  padding: 15px 10px;
 }
 
-.success-badge {
-  background: #27ae60;
-  color: #fff;
-}
-
-footer {
-  padding: 18px 0 15px 0;
-  background: #f2f4f8;
-  text-align: center;
-  font-size: 1em;
-  color: #444;
-  border-top: 1px solid #e5e9f2;
-}
-
-footer a {
-  color: #154c79;
-  text-decoration: underline;
-  transition: color 0.2s;
-}
-
-footer a:hover {
-  color: #1861a3;
+@media (max-width: 600px) {
+  .center-card {
+    padding: 23px 7vw 18px 7vw;
+    max-width: 98vw;
+  }
+  .gh-logo {
+    width: 120px;
+    margin-bottom: 13px;
+  }
 }
