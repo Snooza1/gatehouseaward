@@ -1,0 +1,168 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f6f8fa;
+  margin: 0;
+  color: #222;
+}
+header {
+  background: #fff;
+  border-bottom: 3px solid #2188b6;
+  padding: 1.5rem 0 1rem 0;
+  box-shadow: 0 2px 6px #0001;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.brand img {
+  width: 60px;
+  height: 60px;
+  margin-right: 18px;
+}
+.brand h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #2188b6;
+}
+.brand h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: normal;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+main {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #0002;
+  padding: 2rem;
+}
+.verify-section h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #2188b6;
+}
+#verifyForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+#verifyForm label {
+  font-weight: bold;
+}
+#verifyForm input[type="text"] {
+  padding: 10px;
+  font-size: 1.05rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#verifyForm button {
+  width: 140px;
+  padding: 10px;
+  border: none;
+  background: #2188b6;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+#verifyForm button:hover {
+  background: #125f7a;
+}
+
+.result-card {
+  background: #f4fafb;
+  border: 1.5px solid #2188b6;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 6px #0001;
+}
+.result-card h4 {
+  margin: 0 0 1rem 0;
+  color: #16617f;
+}
+
+.result-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+.result-card th, .result-card td {
+  text-align: left;
+  padding: 0.4rem 0.7rem 0.4rem 0;
+  font-size: 1rem;
+}
+.result-card th {
+  width: 180px;
+  color: #444;
+  font-weight: bold;
+}
+.result-card .status {
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 6px 18px;
+  border-radius: 18px;
+}
+.result-card .success {
+  background: #d3f9da;
+  color: #219150;
+  border: 1px solid #219150;
+}
+.result-card.error {
+  background: #fff6f6;
+  border-color: #c82f2f;
+  color: #c82f2f;
+}
+.result-card.error .status {
+  background: #fff0f0;
+  color: #c82f2f;
+  border: 1px solid #c82f2f;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1.2rem;
+  font-size: 0.97rem;
+  background: #f6f8fa;
+  border-top: 2px solid #e7eaee;
+}
+
+.footer-info {
+  margin-top: 0.7rem;
+}
+
+.ofqual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.5rem;
+}
+.ofqual img {
+  width: 48px;
+  height: auto;
+}
+.ofqual span {
+  font-weight: bold;
+  color: #2188b6;
+  font-size: 1.05rem;
+}
+a {
+  color: #2188b6;
+  text-decoration: underline;
+}
+a:hover {
+  color: #125f7a;
+}
