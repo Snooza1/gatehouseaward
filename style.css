@@ -56,7 +56,7 @@ body {
 #searchBtn {
   width: 100%;
   padding: 12px 0;
-  background: #95d5b2;
+  background: #52b788;        /* Always proper green */
   color: #fff;
   font-weight: 600;
   font-size: 1.08rem;
@@ -67,7 +67,7 @@ body {
 }
 #searchBtn:hover,
 #searchBtn:active {
-  background: #52b788;
+  background: #52b788;        /* Keep the same proper green */
 }
 
 /* Loader Styles */
