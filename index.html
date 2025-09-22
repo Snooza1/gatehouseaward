@@ -2,78 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gatehouse Award Certificate Verification</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <title>Gatehouse Rewards - Certificate Verification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="script.css">
 </head>
 <body>
   <header>
-    <div class="brand">
-      <img src="https://i.ibb.co/hR8SMHL/tefl-logo.png" alt="TEFL Wonderland Logo">
-      <div>
-        <h1>Gatehouse Award</h1>
-        <h2>Certificate Verification</h2>
-      </div>
-    </div>
+    <img src="logo.png" alt="Gatehouse Rewards Logo" class="logo">
+    <h1>Certificate Verification</h1>
   </header>
 
   <main>
     <section class="verify-section">
-      <h3>Verify a Certificate</h3>
+      <h2>Verify a Certificate</h2>
       <form id="verifyForm">
-        <label for="certNumber">Enter Certificate Number or Candidate Number:</label>
-        <input type="text" id="certNumber" name="certNumber" required placeholder="e.g. 2022/GA/29647 or TPQ17407">
+        <input type="text" id="certNumber" placeholder="Enter Certificate Number" required>
         <button type="submit">Verify</button>
       </form>
-    </section>
-
-    <!-- Example Result Card (show with JavaScript when a match is found) -->
-    <section id="resultCard" class="result-card" style="display:none;">
-      <h4>Certificate Found</h4>
-      <table>
-        <tr><th>Name:</th><td>Mary Kevin</td></tr>
-        <tr><th>Date of Birth:</th><td>01/01/2000</td></tr>
-        <tr><th>Qualification:</th><td>GA Level 3 Certificate in Teaching English to Speakers of Other Languages (TESOL)</td></tr>
-        <tr><th>Award Date:</th><td>23/08/2022</td></tr>
-        <tr><th>Candidate Number:</th><td>TPQ17407</td></tr>
-        <tr><th>Certificate Number:</th><td>2022/GA/29647</td></tr>
-        <tr><th>Centre Number:</th><td>001-12</td></tr>
-        <tr><th>Accreditation Number:</th><td>610/1344/4</td></tr>
-        <tr><th>Provider:</th><td>TEFL Wonderland-Brilliant Minds</td></tr>
-      </table>
-      <div class="status success">Authentic • Verified</div>
-    </section>
-
-    <!-- Example Not Found Message (show with JS if not found) -->
-    <section id="notFound" class="result-card error" style="display:none;">
-      <h4>No Certificate Found</h4>
-      <p>The certificate number or candidate number you entered could not be verified. Please check and try again.</p>
+      <div id="result" class="result"></div>
     </section>
   </main>
 
   <footer>
-    <div class="ofqual">
-      <img src="https://i.ibb.co/Ct1WdWq/ofqual-logo.png" alt="Ofqual Logo">
-      <span>Ofqual Regulated</span>
-    </div>
-    <div class="footer-info">
-      <small>&copy; 2025 Gatehouse Award. For official verification visit <a href="https://www.gatehouseawards.org/verification/" target="_blank">gatehouseawards.org/verification</a></small>
-    </div>
+    <p>&copy; 2025 Gatehouse Rewards. All rights reserved.</p>
+    <p>
+      Need help? Email 
+      <a href="mailto:support@gatehouserewards.com">support@gatehouserewards.com</a>
+    </p>
   </footer>
 
-  <!-- Optional: Add JS to control showing/hiding results (example below) -->
   <script>
-    // Demo: Show result or not found on form submit
-    document.getElementById('verifyForm').addEventListener('submit', function(e){
+    // Simple mock verification script (replace with real backend/API integration)
+    document.getElementById('verifyForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const val = document.getElementById('certNumber').value.trim();
-      // Demo logic: show result if matches sample, otherwise show not found
-      if (val === '2022/GA/29647' || val === 'TPQ17407') {
-        document.getElementById('resultCard').style.display = 'block';
-        document.getElementById('notFound').style.display = 'none';
+      const certNumber = document.getElementById('certNumber').value.trim();
+      const resultDiv = document.getElementById('result');
+      // Mock: Accepts "146882" as a valid certificate for demonstration
+      if(certNumber === "146882") {
+        resultDiv.innerHTML = `
+          <div class="success">
+            <h3>Certificate Verified ✅</h3>
+            <p><strong>Certificate Number:</strong> 146882</p>
+            <p><strong>Name:</strong> Mary Kevin</p>
+            <p><strong>Award:</strong> Level 3 TESOL</p>
+            <p><strong>Date:</strong> 23/08/2022</p>
+            <p><strong>Status:</strong> <span class="badge success-badge">Authentic & Valid</span></p>
+          </div>
+        `;
       } else {
-        document.getElementById('resultCard').style.display = 'none';
-        document.getElementById('notFound').style.display = 'block';
+        resultDiv.innerHTML = `
+          <div class="error">
+            <h3>Certificate Not Found ❌</h3>
+            <p>Please check the certificate number and try again. If you believe this is an error, contact <a href="mailto:support@gatehouserewards.com">support@gatehouserewards.com</a>.</p>
+          </div>
+        `;
       }
     });
   </script>
