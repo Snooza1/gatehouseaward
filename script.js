@@ -1,57 +1,59 @@
-// Demo certificate DB
-const certificateDB = {
-  "146882": {
-    number: "146882",
-    name: "Mary Kevin",
-    award: "Level 3 TESOL",
-    date: "23/08/2022",
-    status: "Authentic & Valid"
-  },
-  "123456": {
+// Example certificate data
+const certificates = [
+  {
     number: "123456",
-    name: "Jane Doe",
-    award: "Level 2 TEFL",
-    date: "05/09/2025",
-    status: "Authentic & Valid"
+    recipient: "Maria Stefanova Ilieva",
+    qualification: "GA Level 3 Diploma in Business Management",
+    awardDate: "19/09/2025"
+  },
+  {
+    number: "146882",
+    recipient: "John Doe",
+    qualification: "GA Level 2 Certificate in English",
+    awardDate: "15/07/2024"
   }
-};
+];
 
-const verifyForm = document.getElementById('verifyForm');
-const certInput = document.getElementById('certNumber');
+const form = document.getElementById('verifyForm');
+const certNumberInput = document.getElementById('certNumber');
 const resultDiv = document.getElementById('result');
-const searchBtn = document.getElementById('searchBtn');
+const loader = document.getElementById('loader');
 
-verifyForm.addEventListener('submit', function(e) {
+form.addEventListener('submit', function(e) {
   e.preventDefault();
+  resultDiv.innerHTML = "";
+  loader.style.display = 'flex';
 
-  // Show loading
-  searchBtn.disabled = true;
-  resultDiv.innerHTML = `<span style="color:#777;">Checking certificate...</span>`;
+  setTimeout(() => { // Simulate loading
+    loader.style.display = 'none';
+    const enteredNumber = certNumberInput.value.trim();
 
-  // Simulate loading
-  setTimeout(() => {
-    const certNumber = certInput.value.trim();
-    const cert = certificateDB[certNumber];
+    const cert = certificates.find(c => c.number === enteredNumber);
 
-    if(cert) {
+    if (cert) {
       resultDiv.innerHTML = `
-        <div class="success">
-          <b>Certificate Verified ✅</b><br>
-          <strong>Number:</strong> ${cert.number}<br>
-          <strong>Name:</strong> ${cert.name}<br>
-          <strong>Award:</strong> ${cert.award}<br>
-          <strong>Date:</strong> ${cert.date}<br>
-          <strong>Status:</strong> ${cert.status}
+        <div class="cert-success">
+          <h2>Certificate Found</h2>
+          <div class="details">
+            <b>Recipient:</b> ${cert.recipient}<br>
+            <b>Qualification Achieved:</b><br>
+            ${cert.qualification}<br>
+            <b>Award Date:</b> ${cert.awardDate}
+          </div>
+          <div class="conf-note">
+            If the details show here don't match with the certificate in front of you please contact us immediately on<br>
+            <strong>+44 (0)1924 609250</strong> or <strong>info@gatehouseawards.org</strong>
+          </div>
         </div>
       `;
     } else {
       resultDiv.innerHTML = `
-        <div class="error">
-          Certificate not found.<br>
-          Please check the number and try again.
+        <div class="cert-error">
+          <h2>Certificate Not Found</h2>
+          The certificate number you entered could not be found. Please check the number and try again.<br>
+          If you believe this is an error, contact us at <strong>info@gatehouseawards.org</strong>
         </div>
       `;
     }
-    searchBtn.disabled = false;
-  }, 1100); // Match the original's slight delay
+  }, 1200); // 1.2 second "loading"
 });
