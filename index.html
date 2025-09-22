@@ -2,47 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gatehouse Rewards - Certificate Verification</title>
+  <title>Gatehouse Awards - Certificate Verification</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Gatehouse Rewards Logo" class="logo">
-    <h1>Certificate Verification</h1>
-  </header>
-
-  <main>
-    <section class="verify-section">
-      <h2>Verify a Certificate</h2>
-      <form id="verifyForm">
-        <input type="text" id="certNumber" placeholder="Enter Certificate Number" required>
-        <button type="submit">Verify</button>
-      </form>
-      <div id="result" class="result"></div>
-    </section>
-
-    <section class="add-section">
-      <h2>Add More Certificates</h2>
-      <form id="addForm">
-        <input type="text" id="addCertNumber" placeholder="Certificate Number" required>
-        <input type="text" id="addCertName" placeholder="Name" required>
-        <input type="text" id="addCertAward" placeholder="Award/Qualification" required>
-        <input type="text" id="addCertDate" placeholder="Date (DD/MM/YYYY)" required>
-        <button type="submit">Add Certificate</button>
-      </form>
-      <div id="addResult" class="result"></div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Gatehouse Rewards. All rights reserved.</p>
-    <p>
-      Need help? Email 
-      <a href="mailto:support@gatehouserewards.com">support@gatehouserewards.com</a>
+  <div class="center-card">
+    <img src="logo.png" alt="Gatehouse Awards Logo" class="gh-logo">
+    <h1 class="main-title">Certificate Verification</h1>
+    <p class="subtitle">
+      Please enter the GA certificate number as it appears on the front of the certificate.
     </p>
-  </footer>
-
+    <form id="verifyForm">
+      <input type="text" id="certNumber" placeholder="Certificate Number" autocomplete="off" required>
+      <button type="submit" id="searchBtn">Search</button>
+    </form>
+    <div id="result" class="result"></div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
