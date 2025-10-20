@@ -54,27 +54,24 @@ const certificates = [
     qualification: "GA Level 2 Certificate in English",
     awardDate: "15/07/2024"
   },
-
-  // --- NEW ENTRIES REQUESTED FOR WEBSITE 2 (Gatehouse Rewards) ---
-  // Replace the "number" and "awardDate" fields with the official values if you have them.
-  {
-    number: "GA-240111", // placeholder - replace with real qualification/certificate number
-    recipient: "Tunka Botyova Popova",
-    qualification: "GA Level 3 Diploma in Business Administration",
-    awardDate: "01/06/2024" // placeholder date (DD/MM/YYYY)
-  },
-  {
-    number: "GA-240112", // placeholder - replace with real qualification/certificate number
-    recipient: "Yashko Asparuhov Kolev",
-    qualification: "GA Level 3 Diploma in Business Administration",
-    awardDate: "15/06/2024" // placeholder date
-  },
-  {
-    number: "GA-240113", // placeholder - replace with real qualification/certificate number
-    recipient: "Ivelina Angelova Yankova",
-    qualification: "GA Level 3 Diploma in Business Administration",
-    awardDate: "30/06/2024" // placeholder date
-  }
+{
+  number: "GA-247195",
+  recipient: "Tunka Botyova Popova",
+  qualification: "GA Level 3 Diploma in Business Administration",
+  awardDate: "01/06/2024"
+},
+{
+  number: "GA-243862",
+  recipient: "Yashko Asparuhov Kolev",
+  qualification: "GA Level 3 Diploma in Business Administration",
+  awardDate: "15/06/2024"
+},
+{
+  number: "GA-249041",
+  recipient: "Ivelina Angelova Yankova",
+  qualification: "GA Level 3 Diploma in Business Administration",
+  awardDate: "30/06/2024"
+}
 
   // --- Add any other entries below if needed ---
 ];
