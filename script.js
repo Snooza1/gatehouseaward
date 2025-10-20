@@ -1,3 +1,17 @@
+// Website 2 (Gatehouse Rewards) — Full client-side verification script
+// - Single-file, self-contained script to include on your verification page.
+// - Features:
+//   * Certificates array (realistic non-sequential numbers for the three new entries)
+//   * URL auto-fill (accepts many common param names) and auto-submit when both number/name present
+//   * Deduplication of entries
+//   * Search form handler with loader, simulated lookup delay, clear VERIFIED / NOT FOUND UI
+//   * Admin helpers: addCertificateEntry, replaceCertificateEntries, generatePrefillUrl
+//
+// IMPORTANT:
+// - If you already have a certificates array elsewhere, replace or merge this array instead of duplicating.
+// - If you change the page path or parameter names, update the autoFillParams mapping below.
+// - Update any placeholder values if you want different number patterns.
+
 (function () {
   'use strict';
 
