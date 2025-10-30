@@ -56,6 +56,14 @@
       recipient: "Ivelina Angelova Yankova",
       qualification: "GA Level 3 Diploma in Business Administration",
       awardDate: "30/06/2024"
+    },
+
+    // NEW ENTRY ADDED (2023) — Mariana Sirenarska
+    {
+      number: "GA-23S5N278",
+      recipient: "Mariana Sirenarska",
+      qualification: "GA Level 3 Diploma in Business Administration",
+      awardDate: "20/06/2023"
     }
   ];
 
